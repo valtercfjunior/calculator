@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-image: linear-gradient(to right, #348df3ef, #034499);
+
+}
+
+.header{
+    text-align: center;
+    height: 100px;
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+    padding-top: 50px;
+    
+
+}
+
+.container{    
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 90vh;
+    
+  }
+
+.grid{
+    display: grid;
+    justify-items: center;     
+    grid-template-areas: 
+    "display display display display "
+    "clear delete percent division"
+    "seven eight nine multiplication"
+    "four five six minus"
+    "one two three plus"
+    "0 zero dot equal"   
+    ;
+    background-color: white;
+    border-radius: 10px;
+    height: 480px;
+    width: 320px;
+    padding-bottom: 10px;
+ }
+
+button{  
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    font-size: 15pt;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.numbers{
+    color: #24272B;
+}
+.operators{
+    color: #ff721b;
+}
+.enter{
+    background-color: #ff721b;
+    color: white;
+}
+.enter:active{
+    width: 47px;
+    height: 47px;
+    
+
+} 
+.operators:hover, .numbers:hover{
+    background-color: whitesmoke;
+    transition: 0.7s;
+}
+
+.display{
+    background-color: rgb(216, 216, 216);
+    grid-area: display;
+    height: 120px;
+    width: 320px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    opacity: 0.7;
+       
+}
+.clear{
+    grid-area: clear;
+}
+.delete{
+    grid-area: delete;
+}
+.percent{
+    grid-area: percent;
+}
+.division{
+    grid-area: division;
+}
+.multiplication{
+    grid-area: multiplication;
+}
+.minus{
+    grid-area: minus;
+}
+.plus{
+    grid-area: plus;
+}
+.equal{
+    grid-area: equal;
+}
+.dot{
+    grid-area: dot;
+}
+.zero{
+    grid-area: zero;
+}
+.one{
+    grid-area: one;
+}
+.two{
+    grid-area: two;
+}
+.three{
+    grid-area: three;
+}
+.four{
+    grid-area: four;
+}
+.five{
+    grid-area: five;
+}
+.six{
+    grid-area: six;
+}
+.seven{
+    grid-area: seven;
+}
+.eight{
+    grid-area: eight;
+}
+.nine{
+    grid-area: nine;
+}
