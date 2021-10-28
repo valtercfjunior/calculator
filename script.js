@@ -1,5 +1,6 @@
-let banco = ''
-const botao = document.querySelectorAll( '.numeroOperador')
+let banco = '0'
+let operadores = '+-*/'
+const botao = document.querySelectorAll('.numeroOperador')
 const botaoIgual = document.querySelector('.equal')
 const botaoLimpar = document.querySelector('.clear')
 const botaoDel = document.querySelector('.delete')
@@ -7,46 +8,52 @@ const botaoPercent = document.querySelector('.percent')
 const displayOperation = document.querySelector('.operation')
 const displayResult = document.querySelector('.result')
 
-function atualizarOperation(banco){
+function atualizarOperation(banco) {
     displayOperation.innerHTML = banco
 }
 
 botao.forEach(item => {
-    item.addEventListener('click', (e)=>{
-            banco += e.target.value
-            console.log(banco)
-            atualizarOperation(banco)
-                  
+    item.addEventListener('click', (e) => {
+        if (banco.length <= 20) {
+            if (e.target.value == '.') {
+                if (banco.indexOf('.') == -1) {
+                    banco += e.target.value
+                    atualizarOperation(banco)
+                }
+
+            } else if (operadores.includes(e.target.value) && operadores.includes(banco.slice(-1))) {
+                banco = banco.slice(0, banco.length - 1)
+                banco += e.target.value
+                atualizarOperation(banco)
+
+            } else {
+                banco += e.target.value
+                atualizarOperation(banco)
+                console.log(e.target.value)
+            }
+        }
     })
 })
 
-botaoIgual.addEventListener('click', (e)=>{
+botaoIgual.addEventListener('click', () => {
     const resultado = eval(banco)
-    console.log(resultado)
-    banco = resultado
+    banco = String(resultado)
     displayResult.innerHTML = banco
-   
-
 })
 
-botaoDel.addEventListener('click', ()=>{
+botaoDel.addEventListener('click', () => {
     banco = banco.slice(0, banco.length - 1)
-    console.log(banco)
     atualizarOperation(banco)
-    
 })
 
-botaoLimpar.addEventListener('click', ()=>{
+botaoLimpar.addEventListener('click', () => {
     banco = ''
-    displayResult.innerHTML = ''
-    console.log(banco)
-    atualizarOperation(banco)
+    displayOperation.innerHTML = '0'
+    displayResult.innerHTML = '0'
 })
 
-botaoPercent.addEventListener('click', ()=>{
+botaoPercent.addEventListener('click', () => {
     const resultado = eval(banco)
-    console.log(resultado)
-    banco = resultado
+    banco = String(resultado.toFixed(2))
+    displayResult.innerHTML = banco
 })
-
-//validar: operator depois de operator;  dot depois de dot (dot em float)

@@ -1,58 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
-body{
+
+body {
     background-image: linear-gradient(to right, #348df3ef, #034499);
 
 }
 
-.header{
+.header {
     text-align: center;
-    height: 100px;
+    height: min-content;
     color: white;
     font-family: 'Pacifico', cursive;
     font-size: 4rem;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
-    padding-top: 50px;
-    
+    padding-top: 2rem;
+
 
 }
 
-.container{    
+.container {
     display: grid;
     align-items: center;
     justify-items: center;
     width: 100vw;
-    height: 90vh;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-  }
+    min-height: 70vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-.grid{
+}
+
+.grid {
     display: grid;
-    justify-items: center;     
-    grid-template-areas: 
-    "operation operation operation operation"
-    "result result result result"
-    "clear delete percent division"
-    "seven eight nine multiplication"
-    "four five six minus"
-    "one two three plus"
-    "0 zero dot equal"   
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "operation operation operation operation"
+        "result result result result"
+        "clear delete percent division"
+        "seven eight nine multiplication"
+        "four five six minus"
+        "one two three plus"
+        "0 zero dot equal"
     ;
     background-color: white;
     border-radius: 10px;
-    height: 480px;
-    width: 320px;
+    height: 30rem;
+    width: 20rem;
     padding-bottom: 10px;
- }
+}
 
-button{  
+button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -61,34 +63,43 @@ button{
     cursor: pointer;
     background-color: white;
     font-size: 15pt;
-    
+    display: grid;
+    align-content: center;
+    align-items: center;
+
 }
 
-.numbers{
+.numbers {
     color: #24272B;
 }
-.operators{
+
+.operators {
     color: #ff721b;
 }
-.enter{
+
+.enter {
     background-color: #ff721b;
     color: white;
-}
-.enter:active{
+    }
+
+.enter:active {
     width: 47px;
     height: 47px;
     
 
-} 
-.operators:hover, .numbers:hover{
+
+}
+
+.operators:hover,
+.numbers:hover {
     background-color: whitesmoke;
     transition: 0.7s;
 }
 
-.display{
+.display {
     background-color: rgb(216, 216, 216);
     height: 60px;
-    width: 320px;    
+    width: 320px;
     border: none;
     outline: none;
     opacity: 0.7;
@@ -96,78 +107,101 @@ button{
     align-content: center;
     justify-content: right;
     padding: 10px;
-       
+
 }
-.operation{
+
+.operation {
     grid-area: operation;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-size: 15pt;
-      
+
 }
-.result{
+
+.result {
     grid-area: result;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    font-size: 30pt ;
+    font-size: 20pt;
     color: white;
     font-weight: bold;
-    
+    word-break: break-word;
+
+
 }
-.clear{
+
+.clear {
     grid-area: clear;
 }
-.delete{
+
+.delete {
     grid-area: delete;
 }
-.percent{
+
+.percent {
     grid-area: percent;
 }
-.division{
+
+.division {
     grid-area: division;
 }
-.multiplication{
+
+.multiplication {
     grid-area: multiplication;
 }
-.minus{
+
+.minus {
     grid-area: minus;
 }
-.plus{
+
+.plus {
     grid-area: plus;
 }
-.equal{
+
+.equal {
     grid-area: equal;
 }
-.dot{
+
+.dot {
     grid-area: dot;
 }
-.zero{
+
+.zero {
     grid-area: zero;
 }
-.one{
+
+.one {
     grid-area: one;
 }
-.two{
+
+.two {
     grid-area: two;
 }
-.three{
+
+.three {
     grid-area: three;
 }
-.four{
+
+.four {
     grid-area: four;
 }
-.five{
+
+.five {
     grid-area: five;
 }
-.six{
+
+.six {
     grid-area: six;
 }
-.seven{
+
+.seven {
     grid-area: seven;
 }
-.eight{
+
+.eight {
     grid-area: eight;
 }
-.nine{
+
+.nine {
     grid-area: nine;
 }
